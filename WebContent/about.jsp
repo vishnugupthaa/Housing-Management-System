@@ -11,7 +11,7 @@
 <title> Housing society management system</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -19,14 +19,12 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.jsp"> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a role="button" href="login.jsp">
-                        Login
-                    </a>
+                    <a role="button" href="login.jsp">Login</a>
                 </span>
             </div>
         </div>
@@ -47,24 +45,29 @@
         </div>
     </header>
     <br>
-    <div style="float: right; margin-right: 20px;"><img src="images/homepage.jpg" ></div>
-	<div style="margin-left: 20px;background-color: #ffffff; padding: 20px; width: 720px">
-	<p>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A housing society management and billing project that effectively manages and handles all the functioning of a cooperative housing society. 
-	<br>The software system can store the data of various flat owners and their family members along with their images.
-	The system also maintains and calculates the society maintenance as well as parking, cultural funds, emergency funds and other charges and adds them automatically in individual 
-	flat bill. The system needs an administrator to input various flat owner data and billing amounts into it. The rest of the work is done by the 
-	system on its own. The system consists of automatic bill generation facility. It calculates various associated costs, adds them up and provides
-	 a bill accordingly.
-	 <br>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A housing society management and billing project that effectively manages and handles all the functioning of a cooperative housing society. 
-	<br>The software system can store the data of various flat owners and their family members along with their images. The system also maintains and 
-	calculates the society maintenance as well as parking, cultural funds, emergency funds and other charges and adds them automatically in individual 
-	flat bill. The system needs an administrator to input various flat owner data and billing amounts into it.<br> The rest of the work is done by the 
-	system on its own. The system consists of automatic bill generation facility. It calculates various associated costs, adds them up and provides
-	 a bill accordingly.
-	</p>
+    <div align="center">
+	
+	<center><h2>Our Team</h2></center>
+		<table width="60%" border="3">
+			<tr>
+				<td height="50" width="400" >
+				<div style="padding: 20px" align="center">
+				<img alt="vishnu" height="160px" width="150px" src="images/jerry.jpg"/><br><br>
+				<b>Name : Vishnugupthaa</b><br>
+				<b>Role : Analysis and Coding</b>
+				</div>
+				</td>
+				<td height="50" width="400" >
+				<div style="padding: 20px;" align="center">
+				<img alt="arya" height="160px" width="150px" src="images/tom.jpg"/><br><br>
+				<b>Name : Aarya</b><br>
+				<b>Role : DBA</b>
+				</div>
+				</td>
+			</tr>			
+		</table>
 	</div>
+    <br>
     <footer class="footer">
         <div class="container">
             <div class="row justify-content-center">

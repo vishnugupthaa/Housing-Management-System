@@ -10,8 +10,9 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title> Housing society management system</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -19,23 +20,23 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.jsp"> Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a role="button" href="login.jsp">
+                <span class="navbar-item  active">
+                    <a role="button" href="#">
                         Login
                     </a>
                 </span>
             </div>
         </div>
     </nav>
-
+    
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
-                <div class="col-12 col-sm-6">
+                <div class="col-10 col-sm-6">
                     <h1>Housing Society</h1>
                     <p>A Home Changes Everything We Assure The Co Operative Society aroud you.
                     Rest Assured citizen of our Society</p>
@@ -46,25 +47,22 @@
             </div>
         </div>
     </header>
-    <br>
-    <div style="float: right; margin-right: 20px;"><img src="images/homepage.jpg" ></div>
-	<div style="margin-left: 20px;background-color: #ffffff; padding: 20px; width: 720px">
-	<p>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A housing society management and billing project that effectively manages and handles all the functioning of a cooperative housing society. 
-	<br>The software system can store the data of various flat owners and their family members along with their images.
-	The system also maintains and calculates the society maintenance as well as parking, cultural funds, emergency funds and other charges and adds them automatically in individual 
-	flat bill. The system needs an administrator to input various flat owner data and billing amounts into it. The rest of the work is done by the 
-	system on its own. The system consists of automatic bill generation facility. It calculates various associated costs, adds them up and provides
-	 a bill accordingly.
-	 <br>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A housing society management and billing project that effectively manages and handles all the functioning of a cooperative housing society. 
-	<br>The software system can store the data of various flat owners and their family members along with their images. The system also maintains and 
-	calculates the society maintenance as well as parking, cultural funds, emergency funds and other charges and adds them automatically in individual 
-	flat bill. The system needs an administrator to input various flat owner data and billing amounts into it.<br> The rest of the work is done by the 
-	system on its own. The system consists of automatic bill generation facility. It calculates various associated costs, adds them up and provides
-	 a bill accordingly.
-	</p>
-	</div>
+    <div class="loginbox" align="center">
+    <form class="form-signin">
+      <img class="mb-4" src="images/logo1.png" alt="" width="150" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"><span class="badge badge-pill badge-light"> Remember me</span>
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="row justify-content-center">
@@ -74,5 +72,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>
