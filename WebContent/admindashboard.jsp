@@ -42,11 +42,13 @@
  					</li>
                     
                 </ul>
-                <span class="navbar-item">
-                    <a role="button" href="login.jsp">
-                        Logout
-                    </a>
-                </span>
+                <ul class="navbar-nav">
+                	<span class="navbar-item">
+                    	<a role="button" class="nav-link" href="login.jsp">
+                        	Logout
+                    	</a>
+                	</span>
+                </ul>
             </div>
         </div>
     </nav>

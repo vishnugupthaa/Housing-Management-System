@@ -12,7 +12,6 @@
 <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
-
 <title> Housing society management system</title>
 </head>
 <body>
@@ -24,8 +23,8 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link active" href="userdashboard.jsp">Home Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="viewbill.jsp">View Bill</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userdashboard.jsp">Home Page</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">View Bill</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
@@ -37,13 +36,34 @@
         </div>
     </nav>
     
-    
-    <div align="center" style="background-color: gray;">
-    	<img alt="slide" src="images/c2.jpg">
-    	<br>
+    <div class="conainer" align="center">
+    	<br><br><br><br><br>
+    	<h3><u>View Bill</u></h3>
+    	<br><br>
+    	
+    	<label for="month">Month : </label>
+        	<select>
+            	<option selected="">-Select-</option>
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+            </select>
+        <br>
+    	Year : <input type="text" id="year">
+    	<br><br>
+    	<button type="submit" class="btn btn-primary">Search</button>
     </div>
     
-    <footer class="footer">
+     <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

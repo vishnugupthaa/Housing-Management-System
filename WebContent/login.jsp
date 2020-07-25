@@ -48,13 +48,13 @@
         </div>
     </header>
     <div class="loginbox" align="center">
-    <form class="form-signin">
+    <form class="form-signin" action="login.do" method="post">
       <img class="mb-4" src="images/logo1.png" alt="" width="150" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+      <label for="username" class="sr-only">User Name</label>
+      <input type="text" name="username" class="form-control" placeholder="Username" required autofocus><br>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="password" name="password" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"><span class="badge badge-pill badge-light"> Remember me</span>
