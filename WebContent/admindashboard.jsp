@@ -40,11 +40,18 @@
      							<a class="dropdown-item" href="#">Calculate Maintainance</a>
     						</div>
  					</li>
+ 					<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="addchecker.jsp">Add Checker</a>
+      							<a class="dropdown-item" href="#">Edit Checker Details</a>
+    						</div>
+ 					</li>
                     
                 </ul>
                 <ul class="navbar-nav">
                 	<span class="navbar-item">
-                    	<a role="button" class="nav-link" href="login.jsp">
+                    	<a role="button" class="btn btn-outline-success" href="login.jsp">
                         	Logout
                     	</a>
                 	</span>

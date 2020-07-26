@@ -24,7 +24,7 @@
                     <li class="nav-item"><a class="nav-link" href="contact.jsp"> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a role="button" href="login.jsp">Login</a>
+                    <a role="button" class="btn btn-outline-success" href="login.jsp">Login</a>
                 </span>
             </div>
         </div>

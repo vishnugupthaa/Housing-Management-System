@@ -12,15 +12,12 @@ public class Model {
 			
 			
 			String query = "select * from details where name='"+username+"' and pass='"+password+"'";
-			System.out.println(query);
-			
+						
 			ResultSet rs=stmt.executeQuery(query);
 			
 			while(rs.next())
 			{
-				
 				return rs.getInt("role");
-				
 			}
 		}
 		

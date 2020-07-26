@@ -24,12 +24,12 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="admindashboard.jsp">Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="admindashboard.jsp">Home Page</a></li>
                      
                     <li class="nav-item dropdown">
     					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
     						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="#">Add Member</a>
+      							<a class="dropdown-item" href="addmember.jsp">Add Member</a>
       							<a class="dropdown-item" href="#">Edit Member Details</a>
     						</div>
  					</li>
@@ -40,20 +40,22 @@
      							<a class="dropdown-item" href="#">Calculate Maintainance</a>
     						</div>
  					</li>
-                    <li class="nav-item dropdown">
+ 					<li class="nav-item dropdown">
     					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
     						<div class="dropdown-menu">
       							<a class="dropdown-item" href="addchecker.jsp">Add Checker</a>
       							<a class="dropdown-item" href="#">Edit Checker Details</a>
     						</div>
  					</li>
- 					
+                    
                 </ul>
-                <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="login.jsp">
-                        Logout
-                    </a>
-                </span>
+                <ul class="navbar-nav">
+                	<span class="navbar-item">
+                    	<a role="button" class="btn btn-outline-success" href="login.jsp">
+                        	Logout
+                    	</a>
+                	</span>
+                </ul>
             </div>
         </div>
     </nav>
@@ -63,55 +65,48 @@
         <div class="row justify-content-center">
             <div class="col-md-5">
                     <div class="card">
-                        <div class="card-header" align="center"><h3><u>Enter Details of Resident</u></h3></div>
+                        <div class="card-header" align="center"><h3><u>Enter Details of Checker</u></h3></div>
                         <div class="card-body">
                             <form name="my-form">
                             	<div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Photo : </label>
+                                    <label for="photo" class="col-md-4 col-form-label text-md-right">Photo : </label>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control" name="mpic">
+                                        <input type="file" class="form-control" name="cpic">
                                     </div>
                                 </div>
+                                
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="mname">
+                                        <input type="text" class="form-control" name="cname">
                                     </div>
                                 </div>
-
+								
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="memail">
+                                        <input type="text" class="form-control" name="cemail">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="mpass">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label for="Flat_no" class="col-md-4 col-form-label text-md-right">Flat No. : </label>
-                                    <div class="col-md-6">
-                                        <select class="form-control">
-                            				<option selected="">-Select-</option>
-                            				<option value="1">101</option>
-                            				<option value="2">102</option>
-                            				<option value="3">201</option>
-                           					<option value="4">202</option>
-                            				<option value="5">301</option>
-                            				<option value="6">302</option>
-                        				</select>
+                                        <input type="text" class="form-control" name="cpass">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="pmhno">
+                                        <input type="text" class="form-control" name="cphno">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Address : </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="caddress">
                                     </div>
                                 </div>
                                     		
@@ -121,7 +116,7 @@
                                         </button>
                                         &nbsp;&nbsp;
                                         <button type="submit" class="btn btn-primary">
-                                        	Add Member
+                                        	Add Checker
                                         </button>
                                     </div>
                                 </div>

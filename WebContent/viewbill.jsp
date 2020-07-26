@@ -28,7 +28,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" href="login.jsp">
+                    <a role="button" class="btn btn-outline-success" href="login.jsp">
                         Logout
                     </a>
                 </span>
@@ -36,7 +36,8 @@
         </div>
     </nav>
     
-    <div class="conainer" align="center">
+    <div class="container" align="center">
+    <form method="post">
     	<br><br><br><br><br>
     	<h3><u>View Bill</u></h3>
     	<br><br>
@@ -44,23 +45,25 @@
     	<label for="month">Month : </label>
         	<select>
             	<option selected="">-Select-</option>
-                <option value="1">Jan</option>
-                <option value="2">Feb</option>
-                <option value="3">Mar</option>
-                <option value="4">Apr</option>
-                <option value="5">May</option>
-                <option value="6">Jun</option>
-                <option value="7">Jul</option>
-                <option value="8">Aug</option>
-                <option value="9">Sep</option>
-                <option value="10">Oct</option>
-                <option value="11">Nov</option>
-                <option value="12">Dec</option>
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
             </select>
         <br>
-    	Year : <input type="text" id="year">
+    	Year : <input type="text" name="year">
     	<br><br>
-    	<button type="submit" class="btn btn-primary">Search</button>
+    	<a role="button" class="btn btn-primary" href="bill.jsp">Search</a>
+    </form>
+
     </div>
     
      <footer class="footer fixed-bottom">

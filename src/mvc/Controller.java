@@ -38,12 +38,10 @@ public class Controller extends HttpServlet {
 		case "login.do":
 			if(Model.login(request.getParameter("username"),request.getParameter("password"))==0)
 			{
-				System.out.println("Admin");
 				request.getRequestDispatcher("admindashboard.jsp").forward(request, response);
 			}
 			else if(Model.login(request.getParameter("username"),request.getParameter("password"))==2)
 			{
-				System.out.println("Resident");
 				request.getRequestDispatcher("userdashboard.jsp").forward(request, response);
 			}
 			break;

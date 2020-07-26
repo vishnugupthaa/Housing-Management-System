@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" href="login.jsp">
+                    <a role="button" class="btn btn-outline-success" href="login.jsp">
                         Logout
                     </a>
                 </span>
