@@ -67,7 +67,7 @@
                     <div class="card">
                         <div class="card-header" align="center"><h3><u>Enter Details of Checker</u></h3></div>
                         <div class="card-body">
-                            <form name="my-form">
+                            <form name="checkerform" action="checkervalidation.jsp" method="post">
                             	<div class="form-group row">
                                     <label for="photo" class="col-md-4 col-form-label text-md-right">Photo : </label>
                                     <div class="col-md-6">
@@ -78,34 +78,32 @@
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="cname">
+                                        <input type="text" class="form-control" name="cname" required autofocus>
                                     </div>
                                 </div>
 								
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="cemail">
+                                        <input type="text" class="form-control" name="cemail" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="cpass">
+                                        <input type="password" class="form-control" name="cpass" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="cphno">
+                                        <input type="text" class="form-control" name="cphno" required>
                                     </div>
                                 </div>
 
-                                
-                                    		
-                                    <div class="col-md-6 offset-md-4">
+                                <div class="col-md-6 offset-md-4">
                                     	<button type="reset" class="btn btn-warning">
                                         	Reset
                                         </button>
@@ -113,9 +111,8 @@
                                         <button type="submit" class="btn btn-primary">
                                         	Add Checker
                                         </button>
-                                    </div>
                                 </div>
-                            </form>
+                           </form>
                         </div>
                     </div>
             	</div>

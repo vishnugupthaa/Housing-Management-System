@@ -25,7 +25,7 @@ public class Model {
 		
 		catch(Exception e)
 		{
-			System.out.println("Some Error" + e);
+			System.out.println("We Have Error" + e);
 			return -1;
 		}
 		
@@ -33,6 +33,11 @@ public class Model {
 	}
 		
 	public static boolean addResident(User u)
+	{
+		return true;
+	}
+
+	public static boolean addChecker(User u)
 	{
 		return true;
 	}

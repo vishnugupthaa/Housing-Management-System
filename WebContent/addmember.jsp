@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="mystyles1.css">
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -65,7 +66,7 @@
                     <div class="card">
                         <div class="card-header" align="center"><h3><u>Enter Details of Resident</u></h3></div>
                         <div class="card-body">
-                            <form name="my-form" action="membervalidation.jsp" method="post">
+                            <form name="memberform" action="membervalidation.jsp" method="post">
                             	<div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Photo : </label>
                                     <div class="col-md-6">
@@ -75,56 +76,49 @@
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="mname">
+                                        <input type="text" class="form-control" name="mname" required autofocus>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="memail">
+                                        <input type="text" class="form-control" name="memail" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="mpass">
+                                        <input type="password" class="form-control" name="mpass" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label for="Flat_no" class="col-md-4 col-form-label text-md-right">Flat No. : </label>
                                     <div class="col-md-6">
-                                        <select class="form-control">
-                            				<option selected="">-Select-</option>
-                            				<option value="1">101</option>
-                            				<option value="2">102</option>
-                            				<option value="3">201</option>
-                           					<option value="4">202</option>
-                            				<option value="5">301</option>
-                            				<option value="6">302</option>
-                        				</select>
+                                        <input type="text" class="form-control" name="mflatno" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number : </label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="pmhno">
+                                        <input type="text" class="form-control" name="mphno" required>
                                     </div>
                                 </div>
                                     		
-                                    <div class="col-md-6 offset-md-4">
-                                    	<button type="reset" class="btn btn-warning">
-                                        	Reset
-                                        </button>
+                                    
+                                <div class="col-md-6 offset-md-4">
+                                   	<button type="reset" class="btn btn-warning">
+                                       	Reset
+                                    </button>
                                         &nbsp;&nbsp;
-                                        <button type="submit" class="btn btn-primary">
-                                        	Add Member
-                                        </button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                       	Add Member
+                                    </button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
