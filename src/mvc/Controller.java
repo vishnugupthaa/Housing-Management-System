@@ -35,16 +35,20 @@ public class Controller extends HttpServlet {
 		
 		switch(URI)
 		{
-		case "login.do":
-			if(Model.login(request.getParameter("username"),request.getParameter("password"))==0)
-			{
-				request.getRequestDispatcher("admindashboard.jsp").forward(request, response);
-			}
-			else if(Model.login(request.getParameter("username"),request.getParameter("password"))==2)
-			{
-				request.getRequestDispatcher("userdashboard.jsp").forward(request, response);
-			}
-			break;
+			case "login.do":
+				if(Model.login(request.getParameter("username"),request.getParameter("password"))==2)
+				{
+					request.getRequestDispatcher("admindashboard.jsp").forward(request, response);
+				}
+				else if(Model.login(request.getParameter("username"),request.getParameter("password"))==0)
+				{
+					request.getRequestDispatcher("userdashboard.jsp").forward(request, response);
+				}
+				else if(Model.login(request.getParameter("username"),request.getParameter("password"))==1)
+				{
+					request.getRequestDispatcher("checkerdashboard.jsp").forward(request, response);
+				}
+				break;
 		}
 	}
 

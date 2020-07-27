@@ -65,7 +65,7 @@
                     <div class="card">
                         <div class="card-header" align="center"><h3><u>Enter Details of Resident</u></h3></div>
                         <div class="card-body">
-                            <form name="my-form">
+                            <form name="my-form" action="membervalidation.jsp" method="post">
                             	<div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Photo : </label>
                                     <div class="col-md-6">
@@ -133,8 +133,8 @@
     	</div>
 
 	</main>
-    
-    <footer class="footer fixed-bottom">
+    <br><br><br>
+    <footer class="footer">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

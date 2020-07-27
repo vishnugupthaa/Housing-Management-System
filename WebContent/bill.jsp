@@ -47,8 +47,8 @@
                         </div>
 
                         <div class="col-md-6 text-right">
-                            <p class="font-weight-bold mb-1">Month??</p>
-                            <p class="text-muted">Year??</p>
+                            <p class="font-weight-bold mb-1">Month <%=request.getParameter("month") %></p>
+                            <p class="text-muted">Year <%=request.getParameter("year") %></p>
                         </div>
                     </div>
 

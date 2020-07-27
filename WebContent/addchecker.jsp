@@ -103,12 +103,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Address : </label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="caddress">
-                                    </div>
-                                </div>
+                                
                                     		
                                     <div class="col-md-6 offset-md-4">
                                     	<button type="reset" class="btn btn-warning">
