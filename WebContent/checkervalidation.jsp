@@ -7,8 +7,9 @@
 	u.setPassword(request.getParameter("cpass"));
 	u.setPhone(request.getParameter("cphno"));
 	u.setRole(1);
+	u.setFlatno(0);
 	
-	boolean success = Model.addChecker(u);
+	boolean success = Model.addResident(u);
 	if(success)
 		out.println("<script>window.alert('Added Checker Successfully')</script>");
 	

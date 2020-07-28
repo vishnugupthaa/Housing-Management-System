@@ -24,7 +24,7 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link active" href="admindashboard.jsp">Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admindashboard.jsp">Home Page</a></li>
                      
                     <li class="nav-item dropdown">
     					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
@@ -59,14 +59,40 @@
             </div>
         </div>
     </nav>
+    <br>   
+	<div class="container">
+	
+	<%
+String str = "0",op2 = "0";
+int result = 0;
+
+
+if (true){
+
+
+str = request.getParameter("operand1");
+op2 = request.getParameter("operand2");
+result = Integer.parseInt(str) * Integer.parseInt(op2);
+}
+%>
+<center>
+
+<h2>Simple calculator program in jsp</h2>
+<form method ="get" name ="f1">
+<input type ="text" size ="20" name ="operand1" value = <%= str %> />
+<input type ="text" size="20" name ="operand2" value = <%= op2 %> />
+<p>
+<input type = submit value = Calculate />
+
+Result = <%= result + "" %>
+</form>
+	
+	</div>
     
     
-    <div align="center" style="background-color: gray;">
-    	<img alt="slide" src="images/c2.jpg">
-    	<br>
-    </div>
     
-    <footer class="footer">
+    <br>
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
