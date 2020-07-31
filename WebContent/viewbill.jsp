@@ -3,16 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="mystyles1.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
-<title> Housing society management system</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="mystyles1.css" rel="stylesheet">
+  <title> Housing society management system</title>
 </head>
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -24,8 +22,8 @@
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="userdashboard.jsp">Home Page</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#">View Bill</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Bill History</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="viewbill.jsp">View Bill</a></li>
+                    <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
                     <a role="button" class="btn btn-outline-success" href="login.jsp">
@@ -35,37 +33,61 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container" align="center">
-    <form method="post" action="bill.jsp">
-    	<br><br><br><br><br>
-    	<h3><u>View Bill</u></h3>
-    	<br><br>
-    	
-    	<label for="month">Month : </label>
-        	<select name="month">
-            	<option selected="">-Select-</option>
-                <option value="January">Jan</option>
-                <option value="Febuary">Feb</option>
-                <option value="March">Mar</option>
-                <option value="April">Apr</option>
-                <option value="May">May</option>
-                <option value="June">Jun</option>
-                <option value="July">Jul</option>
-                <option value="Augest">Aug</option>
-                <option value="Septebmer">Sep</option>
-                <option value="October">Oct</option>
-                <option value="November">Nov</option>
-                <option value="December">Dec</option>
-            </select>
-        <br>
-    	Year : <input type="text" name="year">
-    	<br><br>
-    	<button class="btn btn-primary"> Submit </button>
-    </form>
-
-    </div>
-    
+	<br><br><br>
+	<div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header" align="center"><h3><u>View Bill</u></h3></div>
+                        <div class="card-body">
+                            <form name="viewbillform" action="bill.jsp" method="post">
+                            	
+                            	<div class="form-group row">
+                                    <div class="col-md-6">
+                                       
+                                    </div>
+                                </div>
+                            	
+                            	<div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Month : </label>
+                                    <div class="col-md-6">
+                                        <select name="month" class="form-control">
+            								<option selected="">-Select-</option>
+                							<option value="January">Jan</option>
+               								<option value="Febuary">Feb</option>
+                							<option value="March">Mar</option>
+                							<option value="April">Apr</option>
+                							<option value="May">May</option>
+                							<option value="June">Jun</option>
+                							<option value="July">Jul</option>
+                							<option value="Augest">Aug</option>
+                							<option value="Septebmer">Sep</option>
+                							<option value="October">Oct</option>
+                							<option value="November">Nov</option>
+                							<option value="December">Dec</option>
+           								</select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Year : </label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="year" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                        	Submit
+                                        </button>
+                                </div>
+                           </form>
+                        </div>
+                    </div>
+            	</div>
+        	</div>
+    	</div>
+	<br><br>
      <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
