@@ -66,6 +66,8 @@ html,body{
 	margin: 1rem;
 }
 .fun{
+	background-color: #ffa148;
+    color: #212529;
 	width:100%;
 	margin-bottom:2rem;
 }
@@ -180,7 +182,7 @@ figure {
   height: 100%;
 }
 #fixed {
-  background-image: url('images/fixback.jpg');
+  background-image: url('images/fixbackground.jpg');
   position: fixed;
   display: block;
   top: 0;

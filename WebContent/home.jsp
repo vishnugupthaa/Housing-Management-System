@@ -84,7 +84,7 @@
 <div class="container-fluid padding">
 <div class="row welcome text-center">
 	<div class="col-12">
-		<h1 class="display-4">Built Using These.</h1>
+		<h1 class="display-4">Built Using.</h1>
 	</div><hr class="my-4">
 	<div class="col-12">
 		<p class="lead">Welcome to our Society.
@@ -160,22 +160,22 @@
 <div class="container-fluid padding">
 <div class="row text-center">
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="images/gif/panda.gif">
+		<img class="gif" src="images/gif/g1.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="images/gif/poo.gif">
+		<img class="gif" src="images/gif/g3.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="images/gif/unicorn.gif">
+		<img class="gif" src="images/gif/g.gif">
 	</div>
 	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="images/gif/chicken.gif">
+		<img class="gif" src="images/gif/g2.gif">
 	</div>
 
 </div>
 </div>
 </div>
- 
+ <hr class="my-4">
 <!--- Connect -->
 <div class="container-fluid padding">
 <div class="row text-center padding">
