@@ -1,7 +1,7 @@
 package MVC;
 import java.sql.*;
 
-import Beans.*;
+import Beans.User;
 
 public class Model {
 	
@@ -38,7 +38,7 @@ public class Model {
 	}
 	
 	// This method checks if the user is a authentic user and returns the role
-	public int login(String username, String password)
+	public User login(String username, String password)
 	{
 		try{
 			
@@ -46,17 +46,26 @@ public class Model {
 			String query = "select * from " + Query.USERS_TABLE + " where name = '" + username + "' and password = '" + password + "'";
 			ResultSet rs = stmt.executeQuery(query);
 			while(rs.next())
-				return rs.getInt("role");
+			{
+				User u = new User();
+				u.setEmail(rs.getNString("email"));
+				u.setFlatno(rs.getInt("flatno"));
+				u.setName(rs.getString("name"));
+				u.setPhone(rs.getString("phone"));
+				u.setRole(rs.getInt("role"));
+				
+				return u;
+			}
 			
 		}
 		
 		catch(Exception e)
 		{
 			System.out.println("We Have Error" + e);
-			return -1;
+			return null;
 		}
 		
-		return -1;
+		return null;
 	}
 		
 	// This method will add the resident details into the database

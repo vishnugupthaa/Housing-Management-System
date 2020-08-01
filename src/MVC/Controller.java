@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Beans.User;
+
 
 @WebServlet(urlPatterns = {"/Controller", "*.do"})
 public class Controller extends HttpServlet {
@@ -33,13 +35,23 @@ public class Controller extends HttpServlet {
 				String username = request.getParameter("username"),
 						password = request.getParameter("password");
 				
-				int role = Model.getInstance().login(username, password);
+				User loginUser = Model.getInstance().login(username, password);
 				
-				request.getRequestDispatcher(
+				if(loginUser != null)
+				{
+					int role = loginUser.getRole();
+					
+					request.getSession(true).setAttribute("User", loginUser);
+					
+					request.getRequestDispatcher(
 						role == 0 ? Pages.USER_DASHBOARD :
 							role == 1 ? Pages.CHECKER_DASHBOARD : 
 								Pages.ADMIN_DASHBOARD
 						).forward(request, response);
+				}
+				
+				else
+					request.getRequestDispatcher(Pages.HOME).forward(request, response);
 				
 				break;
 		}
