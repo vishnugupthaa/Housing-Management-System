@@ -1,5 +1,12 @@
+<%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%
+
+	User u = (User)session.getAttribute("User");
+	if(u == null || u.getRole() != 0)
+		request.getRequestDispatcher("redirect.to").forward(request, response);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,7 +34,7 @@
                 </ul>
                 <p>Hello</p>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="login.jsp">
+                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>

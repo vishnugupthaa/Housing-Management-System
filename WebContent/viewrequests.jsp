@@ -27,7 +27,7 @@
                       					
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="login.jsp">
+                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>

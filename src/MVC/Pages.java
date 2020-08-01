@@ -7,4 +7,5 @@ interface Pages {
 	String USER_DASHBOARD = "userdashboard.jsp";
 	
 	String HOME = "home.jsp";
+	String LOGIN = "login.jsp";
 }

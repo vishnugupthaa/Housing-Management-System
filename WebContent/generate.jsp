@@ -47,7 +47,7 @@
 		</ul>
 		<ul class="navbar-nav">
                 	<span class="navbar-item">
-                    	<a class="nav-link" href="login.jsp">
+                    	<a class="nav-link" href="logout.jsp">
                         	Logout
                     	</a>
                 	</span>
@@ -62,24 +62,24 @@
                     <div class="card">
                         <div class="card-header" align="center"><h3><u>Enter the details</u></h3></div>
                         <div class="card-body">
-                            <form name="generateform" action="" method="post">
+                            <form name="generateform" action="genebill.jsp" method="post">
                             	<div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Month : </label>
                                     <div class="col-md-6">
                                         <select name="gmonth" class="form-control">
             								<option selected="">-Select-</option>
-                							<option value="January">Jan</option>
-               								<option value="Febuary">Feb</option>
-                							<option value="March">Mar</option>
-                							<option value="April">Apr</option>
-                							<option value="May">May</option>
-                							<option value="June">Jun</option>
-                							<option value="July">Jul</option>
-                							<option value="Augest">Aug</option>
-                							<option value="Septebmer">Sep</option>
-                							<option value="October">Oct</option>
-                							<option value="November">Nov</option>
-                							<option value="December">Dec</option>
+                							<option value="1">Jan</option>
+               								<option value="2">Feb</option>
+                							<option value="3">Mar</option>
+                							<option value="4">Apr</option>
+                							<option value="5">May</option>
+                							<option value="6">Jun</option>
+                							<option value="7">Jul</option>
+                							<option value="8">Aug</option>
+                							<option value="9">Sep</option>
+                							<option value="10">Oct</option>
+                							<option value="11">Nov</option>
+                							<option value="12">Dec</option>
            								</select>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Maintainance : </label>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control" name="gmaintainance" required>
+                                        <input type="text" class="form-control" name="gmaintainance" required>
                                     </div>
                                 </div>
 

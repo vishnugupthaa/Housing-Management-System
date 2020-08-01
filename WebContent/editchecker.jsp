@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="MVC.Model"%>
+<%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,7 +50,7 @@
 		</ul>
 		<ul class="navbar-nav">
                 	<span class="navbar-item">
-                    	<a class="nav-link" href="login.jsp">
+                    	<a class="nav-link" href="logout.jsp">
                         	Logout
                     	</a>
                 	</span>
@@ -55,10 +58,40 @@
 	</div>
 </div>
 </nav>    
-	<br><br><br>
-	Yet to complete after tables construction....
-	<br><br><br>
-    <footer class="footer">
+	<br>	<br>
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>E-Mail</th>
+						<th>Password</th>
+						<th>Phone Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						List<User> list = Model.getInstance().getCheckers();
+					
+						for(User u : list)
+						{
+					%>
+					<tr>
+						<td><%=u.getName() %></td>
+						<td><%=u.getEmail() %></td>
+						<td><%=u.getPassword() %></td>
+						<td><%=u.getPhone() %></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

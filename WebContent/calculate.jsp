@@ -47,7 +47,7 @@
 		</ul>
 		<ul class="navbar-nav">
                 	<span class="navbar-item">
-                    	<a class="nav-link" href="login.jsp">
+                    	<a class="nav-link" href="logout.jsp">
                         	Logout
                     	</a>
                 	</span>

@@ -1,3 +1,8 @@
+<%@page import="java.time.chrono.ChronoLocalDate"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="Beans.Transaction"%>
+<%@page import="MVC.Model"%>
+<%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,14 +31,25 @@
                     <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="login.jsp">
+                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>
             </div>
         </div>
     </nav>
-    
+    <%
+    	User u = (User)session.getAttribute("User");
+    	
+    	String name = u.getName();
+    	int flatno = u.getFlatno();
+    	
+    	int month = Integer.parseInt(request.getParameter("month"));
+    	int year= Integer.parseInt(request.getParameter("year"));
+    	
+    	Transaction t = Model.getInstance().getBill(flatno, month, year);
+    			
+    %>
     <div class="container">
     <div class="row">
         <div class="col-12">
@@ -45,8 +61,8 @@
                         </div>
 
                         <div class="col-md-6 text-right">
-                            <p class="font-weight-bold mb-1"><%=request.getParameter("month") %></p>
-                            <p class="text-muted"><%=request.getParameter("year") %></p>
+                            <p class="font-weight-bold mb-1"><%=Model.getInstance().getMonth(month)%></p>
+                            <p class="text-muted"><%=year %></p>
                         </div>
                     </div>
 
@@ -54,8 +70,8 @@
                     <div class="row pb-3 p-4">
                         <div class="col-md-6">
                             <p class="font-weight-bold mb-4">Resident Details:</p>
-                            <p class="mb-1">Resident Name?????</p>
-                            <p>FlatNO?</p>
+                            <p class="mb-1"><%=name %></p>
+                            <p><%=flatno %></p>
                             <p class="mb-1">Narayanguda,</p>
                             <p class="mb-1">HYD,</p>
                             <p class="mb-1">500004</p>
@@ -77,36 +93,46 @@
                                     <tr>
                                         <td>1.</td>
                                         <td>Pay Rent</td>
-                                        <td>15,000</td>
-                                        <td>15,000</td>
+                                        <td><%=t.getPayrent() %></td>
+                                        <td><%=t.getPayrent() %></td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
                                         <td>Maintanance</td>
-                                        <td>3,000</td>
-                                        <td>3,000</td>
+                                        <td><%=t.getMaintainance() %></td>
+                                        <td><%=t.getMaintainance() %></td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
                                         <td>Parking</td>
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td><%=t.getParking() %></td>
+                                        <td><%=t.getParking() %></td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
                                         <td>Late Payment</td>
-                                        <td>100</td>
-                                        <td>100</td>
+                                        <%
+                                        	if(LocalDate.now().isAfter(LocalDate.of(year, month, 10)))
+                                        	{
+                                        		t.setDelay(100);
+                                        	}
+                                        %>
+                                        <td><%=t.getDelay() %></td>
+                                        <td><%=t.getDelay() %></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
+					<% 
+						session.setAttribute("Txn", t);
+					session.setAttribute("Mth",month);
+					session.setAttribute("Yr", year);
+					%>
                     <div class="d-flex flex-row-reverse bg-dark text-white p-4">
                         <div class="py-3 px-5 text-right">
                             <div class="mb-2">Total amount</div>
-                            <div class="h2 font-weight-dark">18,100</div>
+                            <div class="h2 font-weight-dark"><%=t.getPayrent()+t.getMaintainance()+t.getParking()+t.getDelay() %></div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +141,7 @@
     </div>
     
     <div class="text-light mt-5 mb-5 text-center">
-    	<a role="button" class="btn btn-success" href="#" onclick="javascript:window.alert('Your Bill has been Processed\nPlease print the bill');">
+    	<a role="button" class="btn btn-success" href="updateTxn.jsp" onclick="javascript:window.alert('Your Bill has been Processed\nPlease print the bill');">
              Proceed
         </a>
     	<a role="button" class="btn btn-primary" href="#" onclick="javascript:window.print();">

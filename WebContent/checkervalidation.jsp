@@ -1,5 +1,5 @@
 <%@page import="Beans.User"%>
-<%@page import="mvc.Model"%>
+<%@page import="MVC.Model"%>
 <%
 	User u =new User();
 	u.setName(request.getParameter("cname"));
@@ -9,10 +9,10 @@
 	u.setRole(1);
 	u.setFlatno(0);
 	
-	boolean success = Model.addResident(u);
+	/*boolean success = Model.addResident(u);
 	if(success)
 		out.println("<script>window.alert('Added Checker Successfully')</script>");
 	
 	else
-		out.println("Failed to add member");
+		out.println("Failed to add member");*/
 %>

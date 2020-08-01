@@ -1,3 +1,6 @@
+<%@page import="MVC.Model"%>
+<%@page import="Beans.User"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,52 +16,86 @@
   <title> Housing society management system</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-muted fixed-top">
-<div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="images/logo.png" height="41" width="41"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav nl-auto">
-			<li class="nav-item"><a class="nav-link" href="admindashboard.jsp">Home Page</a></li>
-                     
-                    <li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="addmember.jsp">Add Member</a>
-      							<a class="dropdown-item" href="editmember.jsp">Edit Member Details</a>
-    						</div>
- 					</li>
-                    <li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bill</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="generate.jsp">Generate Bill</a>
-     							<a class="dropdown-item" href="calculate.jsp">Calculate Maintainance</a>
-    						</div>
- 					</li>
- 					<li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="addchecker.jsp">Add Checker</a>
-      							<a class="dropdown-item" href="editchecker.jsp">Edit Checker Details</a>
-    						</div>
- 					</li>
-		</ul>
-		<ul class="navbar-nav">
-                	<span class="navbar-item">
-                    	<a class="nav-link" href="login.jsp">
-                        	Logout
-                    	</a>
-                	</span>
-                </ul>
+	<nav class="navbar navbar-expand-md navbar-dark bg-muted fixed-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="images/logo.png"
+			height="41" width="41"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav nl-auto">
+				<li class="nav-item"><a class="nav-link"
+					href="admindashboard.jsp">Home Page</a></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="addmember.jsp">Add Member</a> <a
+							class="dropdown-item" href="editmember.jsp">Edit Member
+							Details</a>
+					</div></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bill</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="generate.jsp">Generate Bill</a> <a
+							class="dropdown-item" href="calculate.jsp">Calculate
+							Maintainance</a>
+					</div></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="addchecker.jsp">Add Checker</a> <a
+							class="dropdown-item" href="editchecker.jsp">Edit Checker
+							Details</a>
+					</div></li>
+			</ul>
+			<ul class="navbar-nav">
+				<span class="navbar-item"> <a class="nav-link"
+					href="logout.jsp"> Logout </a>
+				</span>
+			</ul>
+		</div>
 	</div>
-</div>
-</nav>    
-	<br><br><br>
-	Yet to complete after tables construction....
-	<br><br><br>
-    <footer class="footer">
+	</nav>
+	<br>	<br>
+	<div class="container">
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Flat No.</th>
+						<th>Name</th>
+						<th>E-Mail</th>
+						<th>Password</th>
+						<th>Phone Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						List<User> list = Model.getInstance().getMembers();
+					
+						for(User u : list)
+						{
+					%>
+					<tr>
+						<td><%=u.getFlatno() %></td>
+						<td><%=u.getName() %></td>
+						<td><%=u.getEmail() %></td>
+						<td><%=u.getPassword() %></td>
+						<td><%=u.getPhone() %></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+	<br>
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
