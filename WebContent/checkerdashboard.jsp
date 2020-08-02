@@ -19,6 +19,33 @@
   <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <link href="mystyles1.css" rel="stylesheet">
   <title> Housing society management system</title>
+  <style>
+   body {
+     background: #83B2B2;
+}
+  	#circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	width: 150px;
+    height: 150px;	
+}
+
+.loader {
+    width: calc(100% - 0px);
+	height: calc(100% - 0px);
+	border: 8px solid #162534;
+	border-top: 8px solid #09f;
+	border-radius: 50%;
+	animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+100% {transform: rotate(360deg);}
+} 
+  
+  </style>
 </head>
 <body>
 
@@ -56,12 +83,26 @@
 	</div>
 	</nav>
     <br>
-	<div class="container" align="center" style="background-color: gray;padding-top: 30px;padding-bottom: 30px;">
-		<p>Welcome,<%=((User)session.getAttribute("User")).getName() %></p>
-		<img src="images/c2.jpg" height=100% width=100%>
+	<div class="container">
+		<h2>
+			Hello <i style="color: orange;"><%=((User)session.getAttribute("User")).getName() %>
+			</i>, Welcome Back.
+		</h2>
+	</div>
+	<div class="container">
+		<!--  	<img src="images/c2.jpg" height=100% width=100%> -->
+		<div id="circle">
+			<div class="loader">
+				<div class="loader">
+					<div class="loader">
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<br>
-    <footer class="footer">
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

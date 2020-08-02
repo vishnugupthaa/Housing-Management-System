@@ -19,6 +19,7 @@
   <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <link href="mystyles1.css" rel="stylesheet">
   <title> Housing society management system</title>
+  
 </head>
 <body>
 
@@ -84,12 +85,12 @@
 	</nav>
 
 	<br>
-    <div class="container" align="center" style="background-color: gray; padding-top: 30px; padding-bottom: 30px;">
-    <p>Welcome, </p>
-		<img src="images/c2.jpg" height=100% width=100%>
+    <div class="container">
+    <h2>Hello <i style="color: orange;"><%=((User)session.getAttribute("User")).getName() %> </i>, Welcome Back.</h2>
+	 	<img src="images/c2.jpg" height=100% width=100%>
 	</div>
     <br>
-    <footer class="footer sticky-bottom">
+    <footer class="footer">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
