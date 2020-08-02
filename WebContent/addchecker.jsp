@@ -13,48 +13,48 @@
   <title> Housing society management system</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-muted fixed-top">
-<div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="images/logo.png" height="41" width="41"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav nl-auto">
-			<li class="nav-item"><a class="nav-link" href="admindashboard.jsp">Home Page</a></li>
-                     
-                    <li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="addmember.jsp">Add Member</a>
-      							<a class="dropdown-item" href="editmember.jsp">Edit Member Details</a>
-    						</div>
- 					</li>
-                    <li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bill</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="generate.jsp">Generate Bill</a>
-     							<a class="dropdown-item" href="calculate.jsp">Calculate Maintainance</a>
-    						</div>
- 					</li>
- 					<li class="nav-item dropdown">
-    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
-    						<div class="dropdown-menu">
-      							<a class="dropdown-item" href="addchecker.jsp">Add Checker</a>
-      							<a class="dropdown-item" href="editchecker.jsp">Edit Checker Details</a>
-    						</div>
- 					</li>
-		</ul>
-		<ul class="navbar-nav">
-                	<span class="navbar-item">
-                    	<a class="nav-link" href="logout.jsp">
-                        	Logout
-                    	</a>
-                	</span>
-                </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-muted fixed-top">
+	<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#Navbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#"><img src="images/logo.png"
+			height="41" width="41"></img></a>
+		<div class="collapse navbar-collapse" id="Navbar">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link active"
+				href="admindashboard.jsp">Home Page</a></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="addmember.jsp">Add Member</a> <a
+						class="dropdown-item" href="editmember.jsp">Edit Member
+						Details</a>
+				</div></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bill</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="generate.jsp">Generate Bill</a> <a
+						class="dropdown-item" href="calculate.jsp">Calculate
+						Maintainance</a>
+				</div></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="addchecker.jsp">Add Checker</a> <a
+						class="dropdown-item" href="editchecker.jsp">Edit Checker
+						Details</a>
+				</div></li>
+			</ul>
+			<ul class="navbar-nav">
+				<span class="btn btn-success btn-outline-danger"> <a class="nav-link"
+					href="logout.jsp"> Logout </a>
+				</span>
+			</ul>
+		</div>
 	</div>
-</div>
-</nav>    
+	</nav>    
     <br><br>
     <main class="my-form">
     <div class="cotainer">

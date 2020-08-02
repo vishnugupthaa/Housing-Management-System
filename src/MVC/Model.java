@@ -147,6 +147,35 @@ public class Model {
 		}
 		return members;
 	}
+	public List<Transaction> getreq()
+	{
+		LinkedList<Transaction> reqs = new LinkedList<Transaction>();
+		
+		try{
+			Statement stmt = c.createStatement();
+			
+			ResultSet rs = stmt.executeQuery(Query.GET_REQUESTS);
+			
+			while(rs.next())
+			{
+				Transaction t = new Transaction();
+				t.setFlatno(rs.getInt("flatno"));
+				t.setMonth(rs.getInt("month"));
+				t.setYear(rs.getInt("year"));
+				t.setMaintainance(rs.getInt("maintainance"));
+				t.setPayrent(rs.getInt("payrent"));
+				t.setParking(rs.getInt("parking"));
+				t.setDelay(rs.getInt("delay"));
+
+				reqs.add(t);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return reqs;
+	}
 	public boolean addBill(Transaction t)
 	{
 		try {

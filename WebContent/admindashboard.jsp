@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+	<nav class="navbar navbar-expand-sm navbar-dark bg-muted fixed-top">
 	<div class="container">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#Navbar">
@@ -56,9 +56,7 @@
 				</div></li>
 			</ul>
 			<ul class="navbar-nav">
-				<li class="nav-item">Welcome, <%=((User)session.getAttribute("User")).getName() %>
-			</li>
-				<span class="navbar-item"> <a class="nav-link"
+				<span class="btn btn-success btn-outline-danger"> <a class="nav-link"
 					href="logout.jsp"> Logout </a>
 				</span>
 			</ul>
@@ -68,6 +66,7 @@
 
 	<br>
     <div class="container" align="center" style="background-color: gray; padding-top: 30px; padding-bottom: 30px;">
+    <p>Welcome, <%=((User)session.getAttribute("User")).getName() %></p>
 		<img src="images/c2.jpg" height=100% width=100%>
 	</div>
     <br>

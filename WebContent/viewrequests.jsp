@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="MVC.Model"%>
+<%@page import="Beans.Transaction"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -27,7 +30,7 @@
                       					
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
+                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>
@@ -36,10 +39,43 @@
     </nav>
     <br>
     
-    Yet to complete after tables.....
+    <div class="container">
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Flat No</th>
+						<th>Month</th>
+						<th>Year</th>
+						<th>Amount/-</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+				<%
+					List<Transaction> list = Model.getInstance().getreq();
+					
+					for(Transaction t : list){
+				%>
+					<tr>
+						<td><%=t.getFlatno() %></td>
+						<td><%=t.getMonth() %></td>
+						<td><%=t.getYear() %></td>
+						<td><%=t.getPayrent()+t.getMaintainance()+t.getParking()+t.getDelay() %></td>
+						<td><a role="button" class="btn btn-success" href="">Accept</a></td>
+						<td><a role="button" class="btn btn-danger" href="">Deny</a></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
+			</table>
+		</div>
+	</div>
     
     <br>
-    <footer class="footer">
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

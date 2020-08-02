@@ -26,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
+                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>

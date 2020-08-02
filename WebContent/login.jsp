@@ -20,7 +20,7 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav nl-auto">
+		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
 				<a class="nav-link"  href="home.jsp">Home</a>
 			</li>
@@ -65,7 +65,6 @@
 				<input type="password" class="form-control" name="password" placeholder="Password" required>
 			</div>
 			<div class="clearfix">
-				<label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary btn-block">Log in</button>
 				</div>

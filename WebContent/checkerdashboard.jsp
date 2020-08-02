@@ -34,7 +34,7 @@
                       					
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
+                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>
@@ -43,6 +43,7 @@
     </nav>
     <br>
 	<div class="container" align="center" style="background-color: gray;padding-top: 30px;padding-bottom: 30px;">
+		<p>Welcome,<%=((User)session.getAttribute("User")).getName() %></p>
 		<img src="images/c2.jpg" height=100% width=100%>
 	</div>
 	<br>

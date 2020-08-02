@@ -32,9 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href="viewbill.jsp">View Bill</a></li>
                     <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
                 </ul>
-                <p>Hello</p>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
+                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>
@@ -42,7 +41,9 @@
         </div>
     </nav>
     <br>
-    <div class="container" align="center" style="background-color: gray; padding-top: 30px;padding-bottom: 30px;">
+	<div class="container" align="center">
+	
+	<h2 style="font-family: sans-serif; color: #910dbc;">Hello <%=((User)session.getAttribute("User")).getName() %> , Welcome Back..!</h2>
 		<img src="images/c2.jpg" height=100% width=100%>
 	</div>
     <br>

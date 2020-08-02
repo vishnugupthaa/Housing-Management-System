@@ -35,7 +35,7 @@
 					href="billhistory.jsp">Bill History</a></li>
 			</ul>
 			<span class="navbar-item"> <a role="button"
-				class="btn btn-outline-success" href="logout.jsp"> Logout </a>
+				class="btn btn-outline-danger btn-success" href="logout.jsp"> Logout </a>
 			</span>
 		</div>
 	</div>
@@ -46,7 +46,6 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>Sl No</th>
 						<th>Flat No</th>
 						<th>Month</th>
 						<th>Year</th>
@@ -56,7 +55,6 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>1</td>
 						<td></td>
 						<td></td>
 						<td></td>

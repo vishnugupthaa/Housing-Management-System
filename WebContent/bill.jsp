@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-success" href="logout.jsp">
+                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
                         Logout
                     </a>
                 </span>
@@ -141,7 +141,7 @@
     </div>
     
     <div class="text-light mt-5 mb-5 text-center">
-    	<a role="button" class="btn btn-success" href="updateTxn.jsp" onclick="javascript:window.alert('Your Bill has been Processed\nPlease print the bill');">
+    	<a role="button" class="btn btn-success" href="updateTxn.jsp" >
              Proceed
         </a>
     	<a role="button" class="btn btn-primary" href="#" onclick="javascript:window.print();">
