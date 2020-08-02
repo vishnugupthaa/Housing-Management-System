@@ -14,30 +14,49 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <link href="mystyles1.css" rel="stylesheet">
   <title> Housing society management system</title>
 </head>
 <body>
-	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="images/logo.png" height="30" width="41"></img></a>
-            <div class="collapse navbar-collapse" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="userdashboard.jsp">Home Page</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="viewbill.jsp">View Bill</a></li>
-                    <li class="nav-item"><a class="nav-link" href="billhistory.jsp">Bill History</a></li>
-                </ul>
-                <span class="navbar-item">
-                    <a role="button" class="btn btn-outline-danger btn-success" href="logout.jsp">
-                        Logout
-                    </a>
-                </span>
-            </div>
-        </div>
-    </nav>
+
+<nav
+		class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
+	<a class="navbar-brand" href="#"><img src="images/logo.png"
+		height=41 width=41></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarSupportedContent-333"
+		aria-controls="navbarSupportedContent-333" aria-expanded="false"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link"
+				href="userdashboard.jsp">Home
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="viewbill.jsp">View Bill
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="billhistory.jsp">Bill History
+			</a></li>
+			
+		</ul>
+		<ul class="navbar-nav ml-auto nav-flex-icons">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Hello , <%=((User)session.getAttribute("User")).getName() %> <i
+					class="fas fa-user"></i>
+			</a>
+				<div class="dropdown-menu dropdown-menu-left dropdown-default"
+					aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="logout.jsp">Logout</a>
+				</div></li>
+		</ul>
+	</div>
+	</nav>
     <%
     	User u = (User)session.getAttribute("User");
     	
@@ -70,8 +89,8 @@
                     <div class="row pb-3 p-4">
                         <div class="col-md-6">
                             <p class="font-weight-bold mb-4">Resident Details:</p>
-                            <p class="mb-1"><%=name %></p>
-                            <p><%=flatno %></p>
+                            <p class="mb-1">Name : <%=name %></p>
+                            <p>Flat No : <%=flatno %></p>
                             <p class="mb-1">Narayanguda,</p>
                             <p class="mb-1">HYD,</p>
                             <p class="mb-1">500004</p>

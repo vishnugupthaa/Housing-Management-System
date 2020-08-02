@@ -72,7 +72,7 @@ public class Model {
 	}
 		
 	// This method will add the resident details into the database
-	public boolean addResident(User u)
+	public boolean addUser(User u)
 	{
 		try {		
 			Statement stmt = c.createStatement();
@@ -176,6 +176,35 @@ public class Model {
 		}
 		return reqs;
 	}
+	public List<Transaction> getPending(int flatno)
+	{
+		LinkedList<Transaction> reqs = new LinkedList<Transaction>();
+		
+		try{
+			Statement stmt = c.createStatement();
+			String q1="select * from "+ Query.TRANSACTIONS_TABLE+" where flatno = " + flatno;
+			ResultSet rs = stmt.executeQuery(q1);
+			
+			while(rs.next())
+			{
+				Transaction t = new Transaction();
+				t.setFlatno(rs.getInt("flatno"));
+				t.setMonth(rs.getInt("month"));
+				t.setYear(rs.getInt("year"));
+				t.setMaintainance(rs.getInt("maintainance"));
+				t.setPayrent(rs.getInt("payrent"));
+				t.setParking(rs.getInt("parking"));
+				t.setDelay(rs.getInt("delay"));
+				
+				reqs.add(t);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return reqs;
+	}
 	public boolean addBill(Transaction t)
 	{
 		try {
@@ -258,6 +287,19 @@ public class Model {
 			System.out.println(e);
 		}
 		
+		return false;
+	}
+	public boolean deleteUser(String email)
+	{
+		try {
+			Statement stmt=c.createStatement();
+			String q1 = "delete from "+Query.USERS_TABLE+" where email='"+email+"'";
+			
+			return stmt.executeUpdate(q1) != 0;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
 		return false;
 	}
 }

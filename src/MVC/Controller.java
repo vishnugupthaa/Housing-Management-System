@@ -36,7 +36,7 @@ public class Controller extends HttpServlet {
 						password = request.getParameter("password");
 				
 				User loginUser = Model.getInstance().login(username, password);
-				
+				System.out.println(username+" "+password);
 				if(loginUser != null)
 				{
 					int role = loginUser.getRole();

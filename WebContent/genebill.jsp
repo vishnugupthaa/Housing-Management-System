@@ -1,5 +1,7 @@
-<%@page import="MVC.Model"%>
+
 <%@page import="Beans.Transaction"%>
+<%@page import="MVC.Model"%>
+<meta http-equiv="refresh" content="0; URL='generate.jsp'" />
 <%
 	Transaction t=new Transaction();
 	t.setMonth(Integer.parseInt(request.getParameter("gmonth")));
@@ -11,5 +13,8 @@
 	t.setStatus(0);
 	
 	boolean s=Model.getInstance().addBill(t);
-	out.println(s ? "Success" : "Failure");
+	if(s)
+		out.println("<script>Window.alert('Bill Generated Successfuly')</script>");
+	else
+		out.println("Failed");
 %>

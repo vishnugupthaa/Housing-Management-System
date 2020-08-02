@@ -24,10 +24,12 @@ public class Test {
 		
 //		System.out.println(LocalDate.now().isAfter(LocalDate.of(2020, 7, 10)));
 		
-		Transaction t = new Transaction();
-		t.setFlatno(301);
-		t.setDelay(100);
-		
-		System.out.println(Model.getInstance().updateBillToBeChecked(t, 5, 2020));
+//		Transaction t = new Transaction();
+//		t.setFlatno(301);
+//		t.setDelay(100);
+//		
+//		System.out.println(Model.getInstance().updateBillToBeChecked(t, 5, 2020));
+		String email="aarya@gmail.com";
+		System.out.println(Model.getInstance().deleteUser(email));
 	}
 }

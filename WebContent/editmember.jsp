@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,55 +13,76 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <link href="mystyles1.css" rel="stylesheet">
   <title> Housing society management system</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm navbar-dark bg-muted fixed-top">
-	<div class="container">
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#Navbar">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<a class="navbar-brand" href="#"><img src="images/logo.png"
-			height="41" width="41"></img></a>
-		<div class="collapse navbar-collapse" id="Navbar">
+
+	<nav
+		class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
+	<a class="navbar-brand" href="#"><img src="images/logo.png"
+		height=41 width=41></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarSupportedContent-333"
+		aria-controls="navbarSupportedContent-333" aria-expanded="false"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link active"
-				href="admindashboard.jsp">Home Page</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="admindashboard.jsp">Home
+			</a></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="addmember.jsp">Add Member</a> <a
-						class="dropdown-item" href="editmember.jsp">Edit Member
+				class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resident
+			</a>
+				<div class="dropdown-menu dropdown-default"
+					aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="addmember.jsp">Add Resident</a> <a
+						class="dropdown-item" href="editmember.jsp">Edit Resident
 						Details</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Bill</a>
-				<div class="dropdown-menu">
+				class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Billing
+			</a>
+				<div class="dropdown-menu dropdown-default"
+					aria-labelledby="navbarDropdownMenuLink-333">
 					<a class="dropdown-item" href="generate.jsp">Generate Bill</a> <a
 						class="dropdown-item" href="calculate.jsp">Calculate
 						Maintainance</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Checker</a>
-				<div class="dropdown-menu">
+				class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Checker
+			</a>
+				<div class="dropdown-menu dropdown-default"
+					aria-labelledby="navbarDropdownMenuLink-333">
 					<a class="dropdown-item" href="addchecker.jsp">Add Checker</a> <a
 						class="dropdown-item" href="editchecker.jsp">Edit Checker
 						Details</a>
 				</div></li>
-			</ul>
-			<ul class="navbar-nav">
-				<span class="btn btn-success btn-outline-danger"> <a class="nav-link"
-					href="logout.jsp"> Logout </a>
-				</span>
-			</ul>
-		</div>
+		</ul>
+		<ul class="navbar-nav ml-auto nav-flex-icons">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Hello , <%=((User)session.getAttribute("User")).getName() %> <i
+					class="fas fa-user"></i>
+			</a>
+				<div class="dropdown-menu dropdown-menu-left dropdown-default"
+					aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="logout.jsp">Logout</a>
+				</div></li>
+		</ul>
 	</div>
 	</nav>
 	<br>	<br>
 	<div class="container">
-		<div class="table-responsive">
+	<h3 align="center">Resident Details</h3>
+		<div class="table-responsive mt-4">
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -69,6 +91,7 @@
 						<th>E-Mail</th>
 						<th>Password</th>
 						<th>Phone Number</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -84,6 +107,11 @@
 						<td><%=u.getEmail() %></td>
 						<td><%=u.getPassword() %></td>
 						<td><%=u.getPhone() %></td>
+						<td><form method="post" action="deleteuser.jsp">
+								<input type="hidden" name="email" value=<%="'" + u.getEmail() + "'" %>>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</form>
+						</td>
 					</tr>
 					<%
 						}
