@@ -1,3 +1,7 @@
+<%@page import="Beans.Log"%>
+<%@page import="MVC.Model"%>
+<%@page import="Beans.Transaction"%>
+<%@page import="java.util.List"%>
 <%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -62,8 +66,8 @@
 	</nav>
 	<br>
 	<div class="container">
-		<div class="table-responsive">
-			<table class="table table-bordered">
+		<div>
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th>Flat No</th>
@@ -73,15 +77,25 @@
 						<th>Status</th>
 					</tr>
 				</thead>
+				<%
+					User user = (User)session.getAttribute("User");
+					int flatno=u.getFlatno();
+					
+					List<Log> list = Model.getInstance().getPaid(flatno);
+					for(Log t : list){
+				%>
 				<tbody>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td><%=t.getFlatno() %></td>
+						<td><%=t.getMonth() %></td>
+						<td><%=t.getYear() %></td>
+						<td><%=t.getPayrent()+t.getMaintainance()+t.getParking()+t.getDelay() %></td>
 						<td><a><span class="badge badge-success">Paid</span></a></td>
 					</tr>
 				</tbody>
+				<%
+					}
+				%>
 			</table>
 		</div>
 	</div>

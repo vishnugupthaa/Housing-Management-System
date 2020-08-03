@@ -82,8 +82,8 @@
 	<br>	<br>
 	<div class="container">
 	<h3 align="center">Checker Details</h3>
-		<div class="table-responsive mt-4">
-			<table class="table table-bordered">
+		<div class="mt-4">
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -107,7 +107,7 @@
 						<td><%=u.getPhone() %></td>
 						<td><form method="post" action="deleteuser1.jsp">
 								<input type="hidden" name="email" value=<%="'" + u.getEmail() + "'" %>>
-								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="submit" class="btn btn-outline-danger">Delete</button>
 							</form>
 						</td>
 					</tr>

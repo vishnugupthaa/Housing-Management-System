@@ -121,8 +121,8 @@
 	<br>
 	<div class="container">
 	<h3 align="center"><i>Pending Bills.</i></h3>
-		<div class="table-responsive mt-4">
-			<table class="table table-bordered">
+		<div class="mt-4">
+			<table class="table table-hover">
 			
 				<thead>
 					<tr>
@@ -139,7 +139,7 @@
 					int flatno=u.getFlatno();
 					
 					List<Transaction> list = Model.getInstance().getPending(flatno);
-					
+					String msg="";
 					for(Transaction t : list){
 				%>
 			
@@ -149,7 +149,16 @@
 						<td><%=t.getMonth() %></td>
 						<td><%=t.getYear() %></td>
 						<td><%=t.getPayrent()+t.getMaintainance()+t.getParking()+t.getDelay() %></td>
-						<td> Print Your Bill</td>
+						<%if(t.getStatus()==1)
+						{
+							msg="Processed Please Print your bill.";
+						}
+						else
+						{
+							msg="Yet to see the Bill.";
+						}
+						%>
+						<td><%=msg %></td>
 					</tr>
 				</tbody>
 				<%

@@ -3,6 +3,7 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+import Beans.Log;
 import Beans.Transaction;
 import Beans.User;
 
@@ -183,6 +184,7 @@ public class Model {
 		try{
 			Statement stmt = c.createStatement();
 			String q1="select * from "+ Query.TRANSACTIONS_TABLE+" where flatno = " + flatno;
+//			String q1="select * from "+ Query.TRANSACTIONS_TABLE+" where flatno = " + flatno + " and status = 0";
 			ResultSet rs = stmt.executeQuery(q1);
 			
 			while(rs.next())
@@ -195,8 +197,36 @@ public class Model {
 				t.setPayrent(rs.getInt("payrent"));
 				t.setParking(rs.getInt("parking"));
 				t.setDelay(rs.getInt("delay"));
-				
+				t.setStatus(rs.getInt("status"));
 				reqs.add(t);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return reqs;
+	}
+	public List<Log> getPaid(int flatno)
+	{
+		LinkedList<Log> reqs = new LinkedList<Log>();
+		
+		try{
+			Statement stmt = c.createStatement();
+			String q1="select * from "+ Query.LOG_TABLE+" where flatno = " + flatno;
+			ResultSet rs = stmt.executeQuery(q1);
+			
+			while(rs.next())
+			{
+				Log l=new Log();
+				l.setFlatno(rs.getInt("flatno"));
+				l.setMonth(rs.getInt("month"));
+				l.setYear(rs.getInt("year"));
+				l.setMaintainance(rs.getInt("maintainance"));
+				l.setPayrent(rs.getInt("payrent"));
+				l.setParking(rs.getInt("parking"));
+				l.setDelay(rs.getInt("delay"));
+				reqs.add(l);
 			}
 		}
 		catch(Exception e)
@@ -301,5 +331,75 @@ public class Model {
 			System.out.println(e);
 		}
 		return false;
+	}
+	public boolean finalPayment(int flatno,int month,int year)
+	{
+		try {
+			Statement stmt = c.createStatement();
+			String q1 = "delete from "+Query.TRANSACTIONS_TABLE+" where flatno = "+flatno+" and month = "+month+" and year = "+year;
+			return stmt.executeUpdate(q1) != 0;
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return false;
+	}
+	public List<Transaction> adminPending()
+	{
+		LinkedList<Transaction> reqs = new LinkedList<Transaction>();
+		
+		try{
+			Statement stmt = c.createStatement();
+			String q1="select * from "+ Query.TRANSACTIONS_TABLE;
+			ResultSet rs = stmt.executeQuery(q1);
+			
+			while(rs.next())
+			{
+				Transaction t = new Transaction();
+				t.setFlatno(rs.getInt("flatno"));
+				t.setMonth(rs.getInt("month"));
+				t.setYear(rs.getInt("year"));
+				t.setMaintainance(rs.getInt("maintainance"));
+				t.setPayrent(rs.getInt("payrent"));
+				t.setParking(rs.getInt("parking"));
+				t.setDelay(rs.getInt("delay"));
+				t.setStatus(rs.getInt("status"));
+				reqs.add(t);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return reqs;
+	}
+	public List<Log> adminPaid()
+	{
+		LinkedList<Log> reqs = new LinkedList<Log>();
+		
+		try{
+			Statement stmt = c.createStatement();
+			String q1="select * from "+ Query.LOG_TABLE;
+			ResultSet rs = stmt.executeQuery(q1);
+			
+			while(rs.next())
+			{
+				Log t=new Log();
+				t.setFlatno(rs.getInt("flatno"));
+				t.setMonth(rs.getInt("month"));
+				t.setYear(rs.getInt("year"));
+				t.setMaintainance(rs.getInt("maintainance"));
+				t.setPayrent(rs.getInt("payrent"));
+				t.setParking(rs.getInt("parking"));
+				t.setDelay(rs.getInt("delay"));
+				reqs.add(t);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return reqs;
 	}
 }

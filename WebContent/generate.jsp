@@ -1,3 +1,5 @@
+<%@page import="MVC.Model"%>
+<%@page import="java.util.List"%>
 <%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -83,7 +85,52 @@
 		</ul>
 	</div>
 	</nav>
-<br><br><br>
+<br>
+
+	<div class="container">
+	<input class="form-control" id="myInput" type="text" placeholder="Search.."><br>
+		<table class="table table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>FlatNo</th>
+					<th>Name</th>
+					<th>Month</th>
+					<th>Year</th>
+					<th>PayRent</th>
+					<th>Parking</th>
+					<th>Maintainance</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="myTable">
+			
+					<%
+						List<User> list = Model.getInstance().getMembers();
+					
+						for(User user : list)
+						{
+					%>
+			
+				<tr>
+					<td><%=user.getFlatno() %></td>
+					<td><%=user.getName() %></td>					
+					<td><input type="text" size=4></td>
+					<td><input type="text" size=4></td>
+					<td><input type="text" size=4></td>
+					<td><input type="text" size=4></td>
+					<td><input type="text" size=4></td>
+					<td><button class="btn btn-info"value="generate">generate</button></td>
+				</tr>
+				<%
+					}
+				%>
+			</tbody>
+				
+		</table>
+	
+	</div>
+
+
 	<div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -168,5 +215,17 @@
             </div>
         </div>
     </footer>
+    
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+    
 </body>
 </html>

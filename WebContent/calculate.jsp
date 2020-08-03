@@ -106,11 +106,9 @@ break;
 <h2><b><i>Calculate Maintainance</i></b></h2><br>
 <form method ="get" name ="f1">
 <b>No. of Sq.ft : </b><input type ="text" size ="20" name ="operand1" value = <%= str %> >
-<br><br>
-<select name = op size = 1>
-<option value = "0" >*</option>
-</select>
-<br><br>
+<br>
+<input type="hidden" name="op" value="0">
+<br>
 <b>Charge per Sq.ft : </b><input type ="text" size="20" name ="operand2" value = <%= op2 %> ><br><br>
 
 <input type = submit value = Calculate class="btn btn-primary">

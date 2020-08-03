@@ -61,8 +61,8 @@
     <br>
     
     <div class="container">
-		<div class="table-responsive">
-			<table class="table table-bordered">
+		<div>
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th>Flat No</th>
@@ -84,8 +84,14 @@
 						<td><%=t.getMonth() %></td>
 						<td><%=t.getYear() %></td>
 						<td><%=t.getPayrent()+t.getMaintainance()+t.getParking()+t.getDelay() %></td>
-						<td><a role="button" class="btn btn-success" href="">Accept</a></td>
-						<td><a role="button" class="btn btn-danger" href="">Deny</a></td>
+						<td>
+							<form action="finalpayment.jsp" method="post">
+								<input type="hidden" name="month" value=<%="'" + t.getMonth() + "'" %>>
+								<input type="hidden" name="year" value=<%="'" + t.getYear() + "'" %>>
+								<input type="hidden" name="flatno" value=<%="'" + t.getFlatno() + "'" %>>
+								<button class="btn btn-success">Accept</button>
+							</form>						
+						</td>
 					</tr>
 					<%
 						}

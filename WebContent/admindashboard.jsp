@@ -1,3 +1,7 @@
+<%@page import="Beans.Log"%>
+<%@page import="MVC.Model"%>
+<%@page import="Beans.Transaction"%>
+<%@page import="java.util.List"%>
 <%@page import="Beans.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -23,13 +27,9 @@
 </head>
 <body>
 
-	<nav
-		class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
-	<a class="navbar-brand" href="#"><img src="images/logo.png"
-		height=41 width=41></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent-333"
-		aria-controls="navbarSupportedContent-333" aria-expanded="false"
+	<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color fixed-top">
+	<a class="navbar-brand" href="#"><img src="images/logo.png" height=41 width=41></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false"
 		aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -45,7 +45,7 @@
 				<div class="dropdown-menu dropdown-default"
 					aria-labelledby="navbarDropdownMenuLink-333">
 					<a class="dropdown-item" href="addmember.jsp">Add Resident</a> <a
-						class="dropdown-item" href="editmember.jsp">Edit Resident
+						class="dropdown-item" href="editmember.jsp">View Resident
 						Details</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
@@ -65,7 +65,7 @@
 				<div class="dropdown-menu dropdown-default"
 					aria-labelledby="navbarDropdownMenuLink-333">
 					<a class="dropdown-item" href="addchecker.jsp">Add Checker</a> <a
-						class="dropdown-item" href="editchecker.jsp">Edit Checker
+						class="dropdown-item" href="editchecker.jsp">View Checker
 						Details</a>
 				</div></li>
 		</ul>
@@ -83,14 +83,88 @@
 		</ul>
 	</div>
 	</nav>
-
 	<br>
-    <div class="container">
-    <h2>Hello <i style="color: orange;"><%=((User)session.getAttribute("User")).getName() %> </i>, Welcome Back.</h2>
-	 	<img src="images/c2.jpg" height=100% width=100%>
-	</div>
+	
+	<div class="container">
+  <h2>Hello <i style="color: orange;"><%=((User)session.getAttribute("User")).getName() %> </i>, Welcome Back.</h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#pending">Pending</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#mpaid">Paid</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#all">All Payments</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="pending" class="container tab-pane active"><br>
+      	<div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Flat No</th>
+						<th>MM/YY</th>
+						<th>Amount/-</th>
+					</tr>
+				</thead>
+				<%
+				List<Transaction> list = Model.getInstance().adminPending();
+				for(Transaction t : list){
+				
+				%>
+				<tbody>
+					<tr>
+						<td><%=t.getFlatno() %></td>
+						<td><%=t.getMonth() %>/<%=t.getYear() %></td>
+						<td><%=t.getMaintainance()+t.getParking()+t.getDelay()+t.getPayrent() %>/-</td>
+					</tr>
+				</tbody>
+				<%
+				}
+				%>
+			</table>
+		</div>
+    </div>
+    <div id="mpaid" class="container tab-pane fade"><br>
+      	<div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Flat No</th>
+						<th>MM/YY</th>
+						<th>Amount/-</th>
+					</tr>
+				</thead>
+				<%
+				List<Log> list1 = Model.getInstance().adminPaid();
+				for(Log t : list1){
+				%>
+				<tbody>
+					<tr>
+						<td><%=t.getFlatno() %></td>
+						<td><%=t.getMonth() %>/<%=t.getYear() %></td>
+						<td><%=t.getMaintainance()+t.getParking()+t.getDelay()+t.getPayrent() %>/-</td>
+					</tr>
+				</tbody>
+				<%
+				}
+				%>			
+			</table>
+		</div>
+    </div>
+    <div id="all" class="container tab-pane fade"><br>
+      
+    </div>
+  </div>
+</div>
     <br>
-    <footer class="footer">
+    <footer class="footer fixed-bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">

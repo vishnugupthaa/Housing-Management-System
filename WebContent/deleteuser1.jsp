@@ -4,8 +4,5 @@
 	String email=request.getParameter("email");
 	boolean suc=Model.getInstance().deleteUser(email);
 	if(suc)
-		out.println("<script>window.alert('Deleted Successfully')</script>");
-
-	else
-		out.println("Failure");
+		out.println();
 %>

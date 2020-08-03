@@ -58,12 +58,12 @@
     <div align="center">
 	
 	<center><h2>Our Team</h2></center>
-		<table width="60%" border="3">
+		<table width="40%" border="3">
 			<tr>
 				<td height="50" width="400" >
 				<div style="padding: 20px" align="center">
 				<img alt="vishnu" height="160px" width="150px" src="images/jerry.jpg"/><br><br>
-				<b>Name : Vishnugupthaa</b><br>
+				<b>Name :<i> Vishnugupthaa</i></b><br>
 				<b>Role : Analysis and Coding</b>
 				</div>
 				</td>
