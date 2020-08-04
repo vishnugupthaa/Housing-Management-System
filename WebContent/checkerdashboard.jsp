@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DateFormat"%>
 <%@page import="MVC.Model"%>
 <%@page import="Beans.Transaction"%>
 <%@page import="java.util.List"%>
@@ -28,7 +30,7 @@
 }
   	#circle {
     position: absolute;
-    top: 50%;
+    top: 78%;
     left: 50%;
     transform: translate(-50%,-50%);
 	width: 150px;
@@ -88,6 +90,8 @@
     <br>
 
 	<%
+		DateFormat df1 = new java.text.SimpleDateFormat("dd/MM/yyyy");
+		DateFormat df2 = new java.text.SimpleDateFormat("E");
 		List<Transaction> list = Model.getInstance().getreq();
 		int x = list.size();
 	%>
@@ -122,9 +126,9 @@
 						<div class="row no-gutters align-items-center">
 							<div class="col mr-2">
 								<div
-									class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+									class="text-xs font-weight-bold text-primary text-uppercase mb-1"><%= df2.format(new Date()) %>
 								</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+								<div class="h5 mb-0 font-weight-bold text-gray-800"><%= df1.format(new Date()) %></div>
 							</div>
 							<div class="col-auto">
 								<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -136,9 +140,7 @@
 		</div>
 		
 	</div>
-	
 	<div class="container">
-		<!--  	<img src="images/c2.jpg" height=100% width=100%> -->
 		<div id="circle">
 			<div class="loader">
 				<div class="loader">
