@@ -11,9 +11,10 @@
 	u.setRole(0);
 	
 	boolean success = Model.getInstance().addUser(u);
-	if(success)
+	if(success){
+		Model.getInstance().sendMail(request.getParameter("memail"), request.getParameter("mname"),request.getParameter("mpass"));
 		out.println("<script>window.alert('Added Resident Successfully')</script>");
-	
+	}
 	else
 		out.println("Failed to add member");
 %>

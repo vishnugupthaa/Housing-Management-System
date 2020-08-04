@@ -1,7 +1,13 @@
 package MVC;
+
 import java.sql.*;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import Beans.Log;
 import Beans.Transaction;
@@ -401,5 +407,50 @@ public class Model {
 			System.out.println(e);
 		}
 		return reqs;
+	}
+	public void sendMail(String email,String name,String pass)
+	{
+		   
+		  final String user="vilasbusybro143@gmail.com"; 
+		  final String password="Vilas@1317";  
+		    
+		  String to=email;  
+		  
+		   //Get the session object  
+		   Properties prop = new Properties();  
+		   prop.put("mail.smtp.host", "smtp.gmail.com");
+	        prop.put("mail.smtp.port", "587");
+	        prop.put("mail.smtp.auth", "true");
+	        prop.put("mail.smtp.starttls.enable", "true");
+		     
+		   Session session = Session.getDefaultInstance(prop,  
+		    new javax.mail.Authenticator() {  
+		      protected PasswordAuthentication getPasswordAuthentication() {  
+		    return new PasswordAuthentication(user,password);  
+		      }  
+		    });  
+		  
+		   //Compose the message  
+		    try {  
+		     MimeMessage message = new MimeMessage(session);  
+		     message.setFrom(new InternetAddress(user));  
+		     message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
+		     message.setSubject("Welcome to Vilas");  
+		     message.setContent("<h1>Dear "+name+",</h1> <h3>Welcome to our Society Vilas!</h3>"
+		     		+ "<code>We extend a warm greeting from our team and hope you will be happy in your new home."
+		     		+ "Included in this letter is all of the information you need to know for joining our online society Application.<br>"
+		     		+ "<h4><u>Please Find your login details here :</u></h4>"
+		     		+ "Username    : "+name+" ,"
+     				+ "<br>Secret Code : "+pass
+     						+ "<br><br>Please Don't Share Your personal details to anyone.</code>", "text/html");  
+		       
+		     
+		     
+		    //send the message  
+		     Transport.send(message);  
+		  
+		     System.out.println("message sent successfully...");  
+		   
+		     } catch (MessagingException e) {e.printStackTrace();}  
 	}
 }

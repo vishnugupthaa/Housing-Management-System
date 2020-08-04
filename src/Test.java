@@ -29,7 +29,7 @@ public class Test {
 //		t.setDelay(100);
 //		
 //		System.out.println(Model.getInstance().updateBillToBeChecked(t, 5, 2020));
-		String email="aarya@gmail.com";
-		System.out.println(Model.getInstance().deleteUser(email));
+		String email="vishnu.gupthaa@gmail.com";
+		Model.getInstance().sendMail(email,"Vishnu","Vishnu@1317");
 	}
 }

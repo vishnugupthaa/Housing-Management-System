@@ -16,12 +16,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <link href="mystyles1.css" rel="stylesheet">
   <title> Housing society management system</title>
+  
 </head>
 <body>
 
@@ -119,11 +125,19 @@
 		</div>
 	</div>
 	<br>
+	
+	
+	
+	
 	<div class="container">
-	<h3 align="center"><i>Pending Bills.</i></h3>
-		<div class="mt-4">
-			<table class="table table-hover">
-			
+	
+	<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-secondary" align="center">Pending Bills.</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable">
 				<thead>
 					<tr>
 						<th>Flat No.</th>
@@ -201,8 +215,14 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
+              </div>
+            </div>
+          </div>
 	</div>
+	
+	
+	
+	
 	
 	<br>
      <footer class="footer">

@@ -65,9 +65,17 @@
 	</div>
 	</nav>
 	<br>
+	
+	
 	<div class="container">
-		<div>
-			<table class="table table-hover">
+	
+	<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-secondary" align="center">Bill History.</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable">
 				<thead>
 					<tr>
 						<th>Flat No</th>
@@ -97,8 +105,16 @@
 					}
 				%>
 			</table>
-		</div>
+              </div>
+            </div>
+          </div>
 	</div>
+	
+	
+	
+	
+	
+	
 	<footer class="footer fixed-bottom">
 	<div class="container">
 		<div class="row justify-content-center">

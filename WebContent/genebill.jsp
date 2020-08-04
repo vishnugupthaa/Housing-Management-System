@@ -1,8 +1,16 @@
 
 <%@page import="Beans.Transaction"%>
 <%@page import="MVC.Model"%>
-<meta http-equiv="refresh" content="0; URL='generate.jsp'" />
+<meta http-equiv="refresh" content="1; URL='generate.jsp'" />
 <%
+
+	System.out.println(request.getParameter("gmonth"));
+	System.out.println(request.getParameter("gyear"));
+	System.out.println(request.getParameter("gflatno"));
+	System.out.println(request.getParameter("grent"));
+	System.out.println(request.getParameter("gmaintainance"));
+	System.out.println(request.getParameter("gparking"));
+
 	Transaction t=new Transaction();
 	t.setMonth(Integer.parseInt(request.getParameter("gmonth")));
 	t.setYear(Integer.parseInt(request.getParameter("gyear")));
