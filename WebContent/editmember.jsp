@@ -140,7 +140,7 @@
 	</div>
 	<br>
 	<br>
-    <footer class="footer fixed-bottom">
+    <footer class="footer">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
